@@ -33,20 +33,28 @@ function App() {
   }
 
   return (
-    <div>
-      <ul data-testid="repository-list">
+    <div className="container back-default">
+      <ul className="repo-list" data-testid="repository-list">
         {repositories.map(repo => {
           return (
-            <li key={repo.id}>
-              {repo.title}
+            <li className="repo-item back-light" key={repo.id}>
+              <div className="panel-left">
+                <span className="repo-title repo-full-width">{repo.title}</span>
+                <span className="repo-skills repo-full-width">{repo.techs.join(', ')}</span>
+                <a href={repo.url} target="_blank" rel="noopener noreferrer" className="repo-link repo-full-width">{repo.url}</a>
+              </div>
 
-              <button onClick={() => handleRemoveRepository(repo.id)}>Remover</button>
+              <div className="panel-right">
+                <button className="button button-remove" onClick={() => handleRemoveRepository(repo.id)}>Remover</button>
+              </div>
             </li>
           );
         })}
       </ul>
 
-      <button onClick={handleAddRepository}>Adicionar</button>
+      <div className="panel-full">
+        <button className="button button-add" onClick={handleAddRepository}>Adicionar</button>
+      </div>
     </div>
   );
 }
