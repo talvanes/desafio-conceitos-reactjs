@@ -4,14 +4,6 @@ import api from './services/api';
 import "./styles.css";
 
 function App() {
-  async function handleAddRepository() {
-    // TODO
-  }
-
-  async function handleRemoveRepository(id) {
-    // TODO
-  }
-
   const [repositories, setRepositories] = useState([]);
 
   /* List Repositories */
@@ -20,6 +12,22 @@ function App() {
       setRepositories(response.data);
     })
   }, []);
+
+  /* Create a New Repo */
+  async function handleAddRepository() {
+    const response = await api.post('repositories', {
+      title: `Novo Projeto - ${Date.now()}`,
+      url: `https://www.github.com/talvanes/novo-projeto-${Date.now()}`,
+      techs: ['Node.js', 'React'],
+    });
+
+    const repository = response.data;
+    setRepositories([...repositories, repository]);
+  }
+
+  async function handleRemoveRepository(id) {
+    // TODO
+  }
 
   return (
     <div>
