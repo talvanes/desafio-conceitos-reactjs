@@ -43,9 +43,11 @@ body {
   font-size: 0.8em;
 }
 
-.repo-skills {
+.repo-skills, .repo-likes {
   font-size: 1em;
 }
+
+.repo-likes { margin-top: 5px; }
 
 .button {
   cursor: pointer;
@@ -63,6 +65,12 @@ body {
 
 .button-remove {
   background: #ca4949;
+  color: #fff;
+  margin: 0 15px;
+}
+
+.button-like {
+  background: #f742ab;
   color: #fff;
   margin: 0 15px;
 }
