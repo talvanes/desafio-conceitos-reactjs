@@ -53,7 +53,7 @@ function App() {
                 <span className="repo-title repo-full-width">{repo.title}</span>
                 <span className="repo-skills repo-full-width">{repo.techs.join(', ')}</span>
                 <a href={repo.url} target="_blank" rel="noopener noreferrer" className="repo-link repo-full-width">{repo.url}</a>
-                <span className="repo-likes">👍&nbsp;{repo.likes}</span>
+                <span className="repo-likes">Likes:&nbsp;{repo.likes}</span>
               </div>
 
               <div className="panel-right">
